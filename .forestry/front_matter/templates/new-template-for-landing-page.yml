@@ -1,4 +1,18 @@
 ---
 label: New template for landing page
 hide_body: true
-fields: []
+fields:
+- name: main_title
+  type: text
+  config:
+    required: false
+  label: Main title
+- name: header_text
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: header text
