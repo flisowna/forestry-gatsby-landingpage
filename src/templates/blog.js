@@ -53,7 +53,7 @@ export default function Blog(props) {
           </Link>
         </div>
         <ul>
-          {data.frontmatter.members?.[0].members?.map(member => <li>{member.first_name}</li>)}
+          {data.frontmatter.members?.[0].member.map(member => <li>{member.first_name}</li>)}
         </ul>
       </article>
     </Layout>
@@ -80,8 +80,17 @@ export const getPostData = graphql`
           }
         }
         members {
-          members {
+          member {
             first_name
+            role
+            member_image {
+              childImageSharp {
+                fluid(maxWidth: 1500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            
           }
         }
       }
