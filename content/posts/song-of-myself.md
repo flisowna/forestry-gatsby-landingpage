@@ -14,8 +14,6 @@ members:
   - role: Developer
     member_image: "/content/images/vahid.png"
     first_name: Vahid
-- template: members
-  member: []
 
 ---
 I have heard what the talkers were talking, the talk of the  
