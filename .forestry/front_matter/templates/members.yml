@@ -2,7 +2,7 @@
 label: Members
 hide_body: true
 fields:
-- name: members
+- name: member
   type: field_group_list
   fields:
   - name: first_name
@@ -15,3 +15,13 @@ fields:
     max: 
     labelField: 
   label: Members
+- name: role
+  type: text
+  config:
+    required: false
+  label: role
+- name: image_member
+  type: file
+  config:
+    maxSize: 64
+  label: image member
