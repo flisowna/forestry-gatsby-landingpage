@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import useBlogData from '../static_queries/useBlogData'
 import blogTemplateStyles from "../styles/templates/blog.module.scss"
+import repeatableTemplateStyles from "../styles/templates/block.module.scss"
 //this component handles the blur img & fade-ins
 import Img from 'gatsby-image'
 
@@ -52,9 +53,11 @@ export default function Blog(props) {
             </svg>
           </Link>
         </div>
-        <ul>
-          {data.frontmatter.members?.[0].member.map(member => <li>{member.first_name}</li>)}
-        </ul>
+        <div className={repeatableTemplateStyles.team__members}>
+          <ul>
+            {data.frontmatter.members?.[0].member.map(member => <li>{member.first_name} ({member.role})</li>)}
+          </ul>
+        </div>
       </article>
     </Layout>
   )
@@ -83,14 +86,6 @@ export const getPostData = graphql`
           member {
             first_name
             role
-            member_image {
-              childImageSharp {
-                fluid(maxWidth: 1500) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            
           }
         }
       }
