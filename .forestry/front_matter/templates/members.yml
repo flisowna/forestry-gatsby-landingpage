@@ -10,18 +10,18 @@ fields:
     config:
       required: true
     label: First Name
+  - name: role
+    type: text
+    config:
+      required: false
+    label: role
+  - name: member_image
+    type: file
+    config:
+      maxSize: 64
+    label: member image
   config:
     min: 
     max: 
     labelField: 
   label: Members
-- name: role
-  type: text
-  config:
-    required: false
-  label: role
-- name: image_member
-  type: file
-  config:
-    maxSize: 64
-  label: image member
