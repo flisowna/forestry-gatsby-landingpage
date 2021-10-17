@@ -55,7 +55,7 @@ export default function Blog(props) {
         </div>
         <div className={repeatableTemplateStyles.team__members}>
           <ul>
-            {data.frontmatter.members?.[0].member.map(member => <li>{member.first_name} ({member.role})</li>)}
+            {data.frontmatter.members?.[0].member?.map(member => <li>{member.first_name} ({member.role})</li>)}
           </ul>
         </div>
       </article>
