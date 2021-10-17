@@ -9,6 +9,13 @@ members:
   role: Developer
   member:
   - first_name: Dani
+    role: Developer
+    member_image: "/content/images/daniel.png"
+  - role: Developer
+    member_image: "/content/images/vahid.png"
+    first_name: Vahid
+- template: members
+  member: []
 
 ---
 I have heard what the talkers were talking, the talk of the  
