@@ -23,6 +23,8 @@ export default function Blog(props) {
     }
   }
 
+  console.log(data.frontmatter);
+
   return (
     <Layout>
       <article className={blogTemplateStyles.blog}>
@@ -50,6 +52,9 @@ export default function Blog(props) {
             </svg>
           </Link>
         </div>
+        <ul>
+          {data.frontmatter.members?.[0].members?.map(member => <li>{member.first_name}</li>)}
+        </ul>
       </article>
     </Layout>
   )
@@ -72,6 +77,11 @@ export const getPostData = graphql`
             fluid(maxWidth: 1500) {
               ...GatsbyImageSharpFluid
             }
+          }
+        }
+        members {
+          members {
+            first_name
           }
         }
       }
